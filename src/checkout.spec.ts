@@ -8,5 +8,11 @@ describe('Checkout',()=>{
             const result = checkout.getTotalPrice();
             expect(result).toBe(0);
         });
+        it('should return 50 when  item A have been scanned',()=>{
+            const checkout = new Checkout();
+            checkout.scan('A');
+            const result = checkout.getTotalPrice();
+            expect(result).toBe(50);
+        });
     })
 })
