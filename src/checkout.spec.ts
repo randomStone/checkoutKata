@@ -23,5 +23,16 @@ describe('Checkout',()=>{
             const result = checkout.getTotalPrice();
             expect(result).toBe(30);
         });
+
+        it('should return 115 when with item A B C and D are scanned',()=>{
+            const prices = [{sku:'A',price:50},{sku:'B',price:30},{sku:'C',price:20},{sku:'D',price:15} ];
+            const checkout = new Checkout(prices);
+            checkout.scan('A');
+            checkout.scan('B');
+            checkout.scan('C');
+            checkout.scan('D');
+            const result = checkout.getTotalPrice();
+            expect(result).toBe(115);
+        });
     })
 })

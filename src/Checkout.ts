@@ -9,7 +9,7 @@ export class Checkout implements ICheckout{
     }
     scan(sku: string): void {
         const price = this.lookupItemPrice(sku);
-        this.subTotal=price;
+        this.subTotal+=price;
     }
     getTotalPrice(): number {
         return this.subTotal;
@@ -18,5 +18,6 @@ export class Checkout implements ICheckout{
     private lookupItemPrice(sku:string):number{
         return this.items.find((item)=>item.sku===sku).price;
     }
+
 
 }
