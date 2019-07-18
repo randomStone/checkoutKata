@@ -47,5 +47,15 @@ describe('Checkout',()=>{
             const result = checkout.getTotalPrice();
             expect(result).toBe(50);
         });
+        it('should return 130 when with 3 item As',()=>{
+            const prices = [{sku:'A',price:50} ];
+            const itemLookup =new Lookup(prices); 
+            const checkout = new Checkout(itemLookup);
+            checkout.scan('A');
+            checkout.scan('A');
+            checkout.scan('A');
+            const result = checkout.getTotalPrice();
+            expect(result).toBe(130);
+        });
     })
 })
