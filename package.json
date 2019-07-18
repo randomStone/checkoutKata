@@ -4,7 +4,8 @@
   "description": "checkout kata TDD",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,3 @@
+interface ICheckout {
+     getTotalPrice():number;
+}
